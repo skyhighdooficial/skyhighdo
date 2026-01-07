@@ -1,155 +1,84 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Skyhighdo — Aviación Privada y Alquiler de Jets Ejecutivos</title>
-  <meta name="description" content="Skyhighdo: vuelos privados de lujo, alquiler de jets y servicios de aviación ejecutiva. Atención premium, seguridad y discreción.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyHigh — Jets</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f7fb;color:#0b2340}
+    header{background:#0b2340;color:#fff;padding:1rem;text-align:center}
+    .container{max-width:1000px;margin:2rem auto;padding:0 1rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .card{background:#fff;border-radius:8px;padding:1rem;box-shadow:0 2px 6px rgba(11,35,64,0.08);cursor:pointer}
+    .card img{width:100%;height:140px;object-fit:cover;border-radius:6px}
+    .card h3{margin:0.5rem 0}
+    .meta{font-size:0.9rem;color:#3b4b66}
+
+    /* Modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(11,35,64,0.5);display:none;align-items:center;justify-content:center}
+    .modal{background:#fff;padding:1rem;border-radius:8px;max-width:720px;width:90%;box-shadow:0 8px 30px rgba(11,35,64,0.3)}
+    .modal header{display:flex;justify-content:space-between;align-items:center}
+    .modal .content{margin-top:0.5rem}
+    .btn{display:inline-block;padding:0.5rem 0.75rem;border-radius:6px;background:#0b2340;color:#fff;text-decoration:none;border:none;cursor:pointer}
+    .btn.secondary{background:#6b7a93}
+
+    /* Admin panel */
+    #adminPanel{position:fixed;right:1rem;top:1rem;background:#fff;border-radius:8px;padding:1rem;box-shadow:0 6px 24px rgba(11,35,64,0.2);min-width:320px;display:none;z-index:2000}
+    #adminPanel h4{margin:0 0 0.5rem 0}
+    .reservation{background:#f7fafc;padding:0.5rem;border-radius:6px;margin-bottom:0.5rem}
+    .small{font-size:0.85rem;color:#3b4b66}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Skyhighdo - Inicio">
-        <!-- Placeholder SVG logo: reemplaza por tu logo.svg -->
-        <svg id="logo" viewBox="0 0 200 40" width="180" height="36" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1">
-              <stop offset="0" stop-color="#0b2340"/>
-              <stop offset="1" stop-color="#bda56a"/>
-            </linearGradient>
-          </defs>
-          <rect width="200" height="40" fill="transparent"/>
-          <text x="0" y="28" font-family="Playfair Display, serif" font-size="28" fill="url(#g)">Skyhighdo</text>
-        </svg>
-      </a>
-      <nav class="main-nav">
-        <a href="#flota">Flota</a>
-        <a href="#proceso">Nuestro Proceso</a>
-        <a href="#contacto">Contacto</a>
-        <button id="loginBtn" class="btn btn-outline">Iniciar Sesión</button>
-      </nav>
-    </div>
+  <header>
+    <h1>SkyHigh — Jets</h1>
+    <p style="margin:0.25rem 0 0;opacity:0.9">Click a jet to see details and make a reservation.</p>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1>Experiencias de vuelo privadas. Servicio verdaderamente premium.</h1>
-        <p>Alquilamos jets privados con atención personalizada, seguridad y discreción. Vuela a tu ritmo, viaja con elegancia.</p>
-        <div class="hero-cta">
-          <button id="reserveBtn" class="btn btn-primary">Reservar Vuelos</button>
-          <a href="#flota" class="btn btn-ghost">Explorar Nuestra Flota</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="flota" class="section">
-      <div class="container">
-        <h2>Explora Nuestra Flota</h2>
-        <p>Jets ejecutivos cuidadosamente seleccionados para cada tipo de viaje y exigencia.</p>
-        <div class="fleet-grid">
-          <article class="jet-card">
-            <div class="jet-image placeholder-image">Imagen Jet</div>
-            <h3>Gulfstream G650</h3>
-            <p>Alcance ultra largo, cabina de lujo y máxima autonomía.</p>
-            <button class="btn btn-sm">Ver Detalles</button>
-          </article>
-
-          <article class="jet-card">
-            <div class="jet-image placeholder-image">Imagen Jet</div>
-            <h3>Bombardier Global 6000</h3>
-            <p>Comodidad superior y performance para viajes ejecutivos.</p>
-            <button class="btn btn-sm">Ver Detalles</button>
-          </article>
-
-          <article class="jet-card">
-            <div class="jet-image placeholder-image">Imagen Jet</div>
-            <h3>Embraer Praetor 600</h3>
-            <p>Perfecto equilibrio entre lujo y eficiencia.</p>
-            <button class="btn btn-sm">Ver Detalles</button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proceso" class="section alt">
-      <div class="container">
-        <h2>Cómo funciona</h2>
-        <ol class="process-steps">
-          <li><strong>1. Cotiza tu vuelo</strong> — Dinos origen, destino y fechas.</li>
-          <li><strong>2. Confirma tu itinerario</strong> — Revisamos opciones y confirmamos detalles.</li>
-          <li><strong>3. Vuela con lujo</strong> — Atención puerta a puerta y coordinación total.</li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="contacto" class="section">
-      <div class="container">
-        <h2>Contacto</h2>
-        <p>Para información y reservas: escríbenos o abre un chat por WhatsApp.</p>
-        <div class="contact-cards">
-          <a class="contact-card" href="mailto:skyhighdooficial@gmail.com?subject=Solicitud%20de%20Informaci%C3%B3n%20-%20Skyhighdo">
-            <strong>Email</strong>
-            <span>skyhighdooficial@gmail.com</span>
-          </a>
-          <div class="contact-card" id="contactWhats">
-            <strong>WhatsApp</strong>
-            <span>+1 432 316 1990 / +1 786 295 4684</span>
-          </div>
-        </div>
-      </div>
+  <main class="container">
+    <section id="jets" class="grid" aria-live="polite">
+      <!-- Jets will be rendered here -->
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Skyhighdo. Todos los derechos reservados.</small>
-    </div>
-  </footer>
+  <!-- Details Modal -->
+  <div id="detailsBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal" role="document">
+      <header>
+        <h3 id="modalTitle">Jet Details</h3>
+        <button id="closeModal" class="btn secondary">Close</button>
+      </header>
+      <div class="content">
+        <img id="modalImage" src="" alt="" style="width:100%;height:220px;object-fit:cover;border-radius:6px;margin-top:0.5rem">
+        <p id="modalDesc" style="margin:0.5rem 0"></p>
+        <p class="small" id="modalSpecs"></p>
 
-  <!-- Floating Actions -->
-  <div class="floating-actions" aria-hidden="false">
-    <div class="floating whatsapp" id="floatingWhatsapp" aria-label="Contacto WhatsApp">
-      <button class="fab fab-whatsapp" id="fabWhats" aria-haspopup="true" aria-expanded="false" title="WhatsApp">
-        <!-- SVG WhatsApp icon -->
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M12 2C6.49 2 2 6.49 2 12c0 1.99.52 3.85 1.43 5.45L2 22l4.72-1.31C8.15 21.48 10.02 22 12 22c5.51 0 10-4.49 10-10S17.51 2 12 2zM8.9 7.3c.26-.3.64-.5 1.09-.5.85 0 1.5.65 1.5 1.5 0 .45-.2.83-.5 1.09-.3.26-.7.47-1.09.5-.33.02-.67-.05-.95-.21-.28-.16-.5-.4-.66-.68-.16-.28-.23-.61-.21-.95.03-.39.24-.78.5-1.09z"/></svg>
-      </button>
-      <ul class="whats-list" id="whatsList" role="menu" aria-hidden="true">
-        <li><button data-number="14323161990" data-text="Hola, Skyhighdo. Estoy interesado en reservar un vuelo. ¿Podrían darme más información?">+1 432 316 1990</button></li>
-        <li><button data-number="17862954684" data-text="Hola, Skyhighdo. Estoy interesado en reservar un vuelo. ¿Podrían darme más información?">+1 786 295 4684</button></li>
-      </ul>
-    </div>
-
-    <div class="floating email" id="floatingEmail" aria-label="Contacto Email">
-      <a class="fab fab-email" href="mailto:skyhighdooficial@gmail.com?subject=Solicitud%20de%20Informaci%C3%B3n%20-%20Skyhighdo" title="Email">
-        <!-- Email icon -->
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="#0b2340"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
-      </a>
+        <hr>
+        <form id="reserveForm">
+          <label style="display:block;margin-bottom:0.25rem">Your name</label>
+          <input id="resName" required style="width:100%;padding:0.5rem;border-radius:6px;border:1px solid #d6dde6;margin-bottom:0.5rem">
+          <label style="display:block;margin-bottom:0.25rem">Date</label>
+          <input id="resDate" type="date" required style="width:100%;padding:0.5rem;border-radius:6px;border:1px solid #d6dde6;margin-bottom:0.5rem">
+          <div style="display:flex;gap:0.5rem;justify-content:flex-end">
+            <button type="button" id="cancelReserve" class="btn secondary">Cancel</button>
+            <button type="submit" class="btn">Reserve</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
-  <!-- Login Modal (mock) -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button id="modalClose" class="modal-close" aria-label="Cerrar">×</button>
-      <h3 id="modalTitle">Iniciar Sesión</h3>
-      <p>Área de clientes — demo de interfaz. Integración de Auth en fase 2.</p>
-      <form class="login-form" onsubmit="return false;">
-        <label>Email
-          <input type="email" required placeholder="tu@correo.com">
-        </label>
-        <label>Contraseña
-          <input type="password" required placeholder="Contraseña">
-        </label>
-        <div class="modal-actions">
-          <button class="btn btn-primary" id="modalLogin">Entrar</button>
-          <button class="btn btn-ghost" id="modalRegister">Registrarse</button>
-        </div>
-      </form>
+  <!-- Admin Panel (open with triple-click anywhere) -->
+  <aside id="adminPanel" aria-hidden="true">
+    <h4>Admin Panel</h4>
+    <p class="small">Open with triple-click anywhere. Shows current reservations stored in localStorage.</p>
+    <div id="adminContent">
+      <div id="reservationsList"></div>
+      <div style="margin-top:0.5rem;text-align:right">
+        <button id="clearAll" class="btn secondary">Clear all</button>
+      </div>
     </div>
-  </div>
+  </aside>
 
   <script src="js/main.js"></script>
 </body>

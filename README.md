@@ -1,33 +1,18 @@
-# Skyhighdo — Sitio estático (scaffold inicial)
+SkyHigh — README
 
-Este es un scaffold inicial del sitio de Skyhighdo (fase 1). Está pensado para:
-- Reconstrucción desde cero con diseño premium.
-- Funcionalidades iniciales implementadas: botones flotantes WhatsApp + email, animación 3D del logo (hover), modal de login mock y estructura de secciones.
+This project lists jets and allows users to view details and make reservations.
 
-Cómo probar localmente
-1. Descargar los archivos y mantener la estructura:
-   - index.html
-   - css/style.css
-   - js/main.js
-   - assets/ (aquí coloca logo.svg e imágenes)
-2. Abrir `index.html` en el navegador (o servir con un servidor estático local para mejores pruebas).
-   - Ejemplo con Python: `python -m http.server 8000` y abrir http://localhost:8000
+What's new
+- Admin panel: open the admin UI by triple-clicking anywhere on the page. The admin panel shows reservations stored locally and allows deleting or clearing them.
+- Details modal: click a jet card to open a details modal with specs and a reservation form.
+- Local reservations: reservations are stored in the browser's localStorage under the key `skyhigh_reservations`.
+- Jets data file: sample jets are provided in assets/jets.json. Edit or extend this file to change the available jets.
 
-Qué sigue (pendiente por tu parte)
-- Subir el logo SVG/PNG para reemplazar el placeholder.
-- Confirmar si usas imágenes propias o autorizas uso de imágenes libres (Unsplash/Pexels).
-- Confirmar texto final para las secciones o autorizar reescritura completa (SEO + H1/H2 optimizados).
-- Si quieres, preparo el ZIP final y hago pruebas cross-browser (Chrome, Firefox, Safari, Edge), optimizaciones y minificación.
+Usage
+1. Open index.html in a static server (or view in the browser).
+2. Click a jet card to see details and make a reservation — reservations are saved locally.
+3. Triple-click anywhere on the page to open the admin panel and manage reservations.
 
-Entregables finales tras completar fase 1
-- ZIP con sitio final (sin marcas de Blink).
-- README con instrucciones de despliegue.
-- Lista de cambios (diff) explicando lo modificado respecto al scaffold.
-- Checklist de validación completado.
-
-Notas legales y de propiedad
-- Todo el código que entregue estará limpio de marcas de terceros. Confirmaste autorización para quitar las marcas de Blink. Si hubiese alguna restricción contractual en origen, notifícamelo.
-
-Contacto
-- WhatsApp: +1 432 316 1990 / +1 786 295 4684
-- Email: skyhighdooficial@gmail.com
+Notes
+- This implementation stores reservations only in localStorage for demo purposes. For production, integrate a backend for persistent storage and authentication for admin features.
+- The admin panel is intentionally lightweight; secure it before exposing to real users.

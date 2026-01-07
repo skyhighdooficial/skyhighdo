@@ -1,0 +1,32 @@
+[
+  {
+    "id": "jet_raptor",
+    "name": "Raptor X",
+    "capacity": 6,
+    "speed": "Mach 0.85",
+    "range": "3,500 km",
+    "price": 3500,
+    "image": "https://images.unsplash.com/photo-1526406915892-7e53b9d9d6c1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=123456",
+    "description": "A fast, comfortable executive jet with modern avionics and a spacious cabin. Ideal for medium-haul business trips."
+  },
+  {
+    "id": "jet_starlight",
+    "name": "Starlight 2000",
+    "capacity": 8,
+    "speed": "Mach 0.78",
+    "range": "5,000 km",
+    "price": 5200,
+    "image": "https://images.unsplash.com/photo-1504198266286-1659872e6590?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef",
+    "description": "Long-range comfort with tasteful interiors and a smooth ride. Perfect for transcontinental flights."
+  },
+  {
+    "id": "jet_microlux",
+    "name": "MicroLux",
+    "capacity": 4,
+    "speed": "Mach 0.70",
+    "range": "1,200 km",
+    "price": 1500,
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=654321",
+    "description": "Light and nimble. Ideal for quick hops and short-range charters." 
+  }
+]
