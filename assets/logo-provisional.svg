@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="80" viewBox="0 0 420 80" role="img" aria-label="Skyhighdo logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b2340"/>
+      <stop offset="1" stop-color="#bda56a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="transparent"/>
+  <text x="10" y="55" font-family="Playfair Display, serif" font-size="48" fill="url(#g1)">Skyhighdo</text>
+  <path d="M360 20 Q380 40 360 60" fill="none" stroke="#bda56a" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+</svg>
